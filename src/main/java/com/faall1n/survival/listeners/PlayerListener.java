@@ -1,6 +1,8 @@
 package com.faall1n.survival.listeners;
 
 import com.faall1n.survival.Main;
+import com.faall1n.survival.utils.Helper;
+import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -15,7 +17,16 @@ public class PlayerListener implements Listener {
 
         String grupo = Main.getChat().getPlayerPrefix(p);
 
-
+        for (int i = 150; i > 0; i--) {
+            p.sendMessage(" ");
+        }
+        Helper.sendTitle(p, "§6§lBEM-VINDO", "§fAo Survival!");
+        p.sendMessage("");
+        p.sendMessage("§aBem-vindo §f" + p.getName() + "§a ao Survival!");
+        p.sendMessage("");
+        p.sendMessage("§aEstamos com §f" + Bukkit.getOnlinePlayers().size() + "§a jogadores online!");
+        p.sendMessage("§aObrigado por jogar em nosso Servidor ^^");
+        p.sendMessage("");
 
         if (p.hasPermission("survival.vida.20")) {
             p.setMaxHealth(40);
