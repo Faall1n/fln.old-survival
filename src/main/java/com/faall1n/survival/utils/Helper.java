@@ -12,6 +12,20 @@ import java.lang.reflect.InvocationTargetException;
 
 public class Helper {
 
+	public static String getGroup(Player p) {
+		String group = Main.getChat().getPlayerPrefix(p);
+		String prefix = group.replace("&", "§");
+
+		return prefix;
+	}
+
+	public static String getPrefix(Player p) {
+		String group = Main.getChat().getPlayerPrefix(p);
+		String prefix = group.replace("&", "§").replace("[", "").replace("]", "");
+
+		return prefix;
+	}
+
 	public static int getOnline(String ip, int porta) {
 		int online = new getServer(ip, porta).JogadoresOnline;
 		return online;

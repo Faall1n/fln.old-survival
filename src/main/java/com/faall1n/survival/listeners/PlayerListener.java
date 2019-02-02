@@ -15,18 +15,24 @@ public class PlayerListener implements Listener {
         e.setJoinMessage(null);
         Player p = e.getPlayer();
 
-        String grupo = Main.getChat().getPlayerPrefix(p);
+        String grupo = Main.getChat().getPlayerPrefix(p).replace("&", "§");
 
         for (int i = 150; i > 0; i--) {
             p.sendMessage(" ");
         }
-        Helper.sendTitle(p, "§6§lBEM-VINDO", "§fAo Survival!");
+        Helper.sendTitle(p, "§6§lBEM-VINDO", "§fao Survival!");
         p.sendMessage("");
-        p.sendMessage("§aBem-vindo §f" + p.getName() + "§a ao Survival!");
+        p.sendMessage("§aBem-vindo, §f" + grupo + p.getName() + "§a ao Survival!");
         p.sendMessage("");
         p.sendMessage("§aEstamos com §f" + Bukkit.getOnlinePlayers().size() + "§a jogadores online!");
-        p.sendMessage("§aObrigado por jogar em nosso Servidor ^^");
+        p.sendMessage("§aObrigado por jogar em nosso Servidor.");
         p.sendMessage("");
+
+        for (Player all : Bukkit.getOnlinePlayers()) {
+            if (p.hasPermission("survival.join")) {
+                all.sendMessage(grupo + p.getName() + "§6 entrou no servidor!");
+            }
+        }
 
         if (p.hasPermission("survival.vida.20")) {
             p.setMaxHealth(40);

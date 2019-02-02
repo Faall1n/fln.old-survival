@@ -1,9 +1,13 @@
 package com.faall1n.survival;
 
+import com.faall1n.survival.listeners.PlayerListener;
+import com.faall1n.survival.listeners.ServerListener;
+import com.faall1n.survival.listeners.scoreboard.Score;
 import net.milkbowl.vault.chat.Chat;
 import org.bukkit.Bukkit;
 import org.bukkit.command.ConsoleCommandSender;
 import org.bukkit.plugin.Plugin;
+import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -28,11 +32,13 @@ public class Main extends JavaPlugin {
     public Main() {
         plugin = this;
         instance = this;
-        setupChat();
     }
 
     @Override
     public void onEnable() {
+        setupChat();
+        carregarEventos();
+        Score.run();
 
         ConsoleCommandSender console = Bukkit.getConsoleSender();
 
@@ -42,6 +48,16 @@ public class Main extends JavaPlugin {
         console.sendMessage("");
 
     }
+
+    public void carregarEventos() {
+        PluginManager PM = Bukkit.getPluginManager();
+
+        PM.registerEvents(new PlayerListener(), this);
+        PM.registerEvents(new ServerListener(), this);
+        PM.registerEvents(new Score(), this);
+
+    }
+
 
     private boolean setupChat() {
         RegisteredServiceProvider<Chat> rsp = getServer().getServicesManager().getRegistration(Chat.class);
