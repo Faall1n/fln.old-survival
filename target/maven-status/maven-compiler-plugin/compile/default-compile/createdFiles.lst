@@ -1,0 +1,13 @@
+com\faall1n\survival\listeners\tags\NameTags.class
+com\faall1n\survival\utils\getServer.class
+com\faall1n\survival\utils\TitleAPI.class
+com\faall1n\survival\chat\Global.class
+com\faall1n\survival\utils\AbstractCommand$ReflectCommand.class
+com\faall1n\survival\utils\ConfigManager.class
+com\faall1n\survival\listeners\ServerListener.class
+com\faall1n\survival\utils\Helper.class
+com\faall1n\survival\chat\Local.class
+com\faall1n\survival\listeners\tags\NameTags$1.class
+com\faall1n\survival\utils\AbstractCommand.class
+com\faall1n\survival\Main.class
+com\faall1n\survival\listeners\PlayerListener.class

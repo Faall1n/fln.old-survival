@@ -13,6 +13,11 @@ import org.bukkit.scoreboard.Objective;
 import org.bukkit.scoreboard.Scoreboard;
 import org.bukkit.scoreboard.Team;
 
+import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
+import java.text.NumberFormat;
+import java.util.Locale;
+
 public class Score implements Listener {	
 
 	public static void run() {
@@ -32,31 +37,39 @@ public class Score implements Listener {
 		Scoreboard sb = Bukkit.getScoreboardManager().getNewScoreboard();
 		Objective obj = sb.registerNewObjective("score", "dummy");
 
-		obj.setDisplayName("§6§lSURVIVAL");
+		obj.setDisplayName("§5§lINVI SURVIVAL");
 		obj.setDisplaySlot(DisplaySlot.SIDEBAR);
 
 		LineAdder line = new LineAdder(sb, obj);
 
+		line.addLine("", "§3", "", 9);
+		line.addLine("", " §fCash: §6", "?", 8);
+		line.addLine("", " §fCoins: §7", "?", 7);
 		line.addLine("", "§2", "", 6);
 		line.addLine("", " §fGrupo: §4", "?", 5);
 		line.addLine("", "§1", "", 4);
 		line.addLine("", " §fJogadores: §a", "?", 3);
 		line.addLine("", " §fClã: §c", "?", 2);
 		line.addLine("", "§0", "", 1);
-		line.addLine("", "§6survival.com", "", 0);
+		line.addLine("", "§5invinetwork.com", "", 0);
 
 		p.setScoreboard(sb);
 	}
 
 	public static void update(Player p) {
 
+		NumberFormat nf = new DecimalFormat("#,##0.00", new DecimalFormatSymbols(new Locale("pt", "BR")));
+
 		Scoreboard sb = p.getScoreboard();
 		if (sb.getObjective("score") != null) {
 
-			Team grupo = sb.getTeam("line6");
-			grupo.setSuffix(Helper.getGroup(p) + "");
+			Team coins = sb.getTeam("line7");
+			coins.setSuffix(nf.format(Main.getEconomy().getBalance(p)) + "");
 
-			Team server = sb.getTeam("line2");
+			Team grupo = sb.getTeam("line5");
+			grupo.setSuffix(Helper.getPrefix(p) + "");
+
+			Team server = sb.getTeam("line3");
 			server.setSuffix(Helper.getOnline("0.0.0.0", 25565) + "");
 
 		}

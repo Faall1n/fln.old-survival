@@ -16,14 +16,23 @@ public class Helper {
 		String group = Main.getChat().getPlayerPrefix(p);
 		String prefix = group.replace("&", "§");
 
-		return prefix;
+		if (!group.equals("")) {
+			return prefix;
+		} else {
+			return "§7[Membro] ";
+		}
 	}
 
 	public static String getPrefix(Player p) {
 		String group = Main.getChat().getPlayerPrefix(p);
 		String prefix = group.replace("&", "§").replace("[", "").replace("]", "");
 
-		return prefix;
+		if (!group.equals("")) {
+			return prefix;
+		} else {
+			return "§7Membro ";
+		}
+
 	}
 
 	public static int getOnline(String ip, int porta) {

@@ -7,6 +7,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
+import org.bukkit.event.player.PlayerQuitEvent;
 
 public class PlayerListener implements Listener {
 
@@ -15,36 +16,35 @@ public class PlayerListener implements Listener {
         e.setJoinMessage(null);
         Player p = e.getPlayer();
 
-        String grupo = Main.getChat().getPlayerPrefix(p).replace("&", "§");
-
-        for (int i = 150; i > 0; i--) {
+        for (int i = 250; i > 0; i--) {
             p.sendMessage(" ");
         }
         Helper.sendTitle(p, "§6§lBEM-VINDO", "§fao Survival!");
         p.sendMessage("");
-        p.sendMessage("§aBem-vindo, §f" + grupo + p.getName() + "§a ao Survival!");
+        p.sendMessage("§aBem-vindo, §f" + Helper.getGroup(p) + p.getName() + "§a ao Survival!");
         p.sendMessage("");
         p.sendMessage("§aEstamos com §f" + Bukkit.getOnlinePlayers().size() + "§a jogadores online!");
         p.sendMessage("§aObrigado por jogar em nosso Servidor.");
         p.sendMessage("");
 
         for (Player all : Bukkit.getOnlinePlayers()) {
-            if (p.hasPermission("survival.join")) {
-                all.sendMessage(grupo + p.getName() + "§6 entrou no servidor!");
+            if (p.hasPermission("survival.vip.join")) {
+                all.sendMessage(Helper.getGroup(p) + p.getName() + "§6 entrou no servidor!");
             }
         }
 
-        if (p.hasPermission("survival.vida.20")) {
-            p.setMaxHealth(40);
-            p.setHealth(40);
-        } else if (p.hasPermission("survival.vida.15")) {
-            p.setMaxHealth(7.5);
-            p.setHealth(7.5);
-        } else if (p.hasPermission("survival.vida.10")) {
-            p.setMaxHealth(5);
-            p.setHealth(5);
-        }
+    }
 
+    @EventHandler
+    public void onQuit(PlayerQuitEvent e) {
+        e.setQuitMessage(null);
+        Player p = e.getPlayer();
+
+        for (Player all : Bukkit.getOnlinePlayers()) {
+            if (p.hasPermission("survival.vip.join")) {
+                all.sendMessage(Helper.getGroup(p) + "§6 saiu do servidor!");
+            }
+        }
     }
 
 }
