@@ -4,6 +4,7 @@ com\faall1n\survival\utils\files\FileKits.class
 com\faall1n\survival\utils\TitleAPI.class
 com\faall1n\survival\chat\Global.class
 com\faall1n\survival\commands\Fly.class
+com\faall1n\survival\commands\Aviso.class
 com\faall1n\survival\kits\items\BasicsItems.class
 com\faall1n\survival\listeners\tags\NameTags$1.class
 com\faall1n\survival\utils\AbstractCommand.class

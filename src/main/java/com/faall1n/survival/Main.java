@@ -2,6 +2,7 @@ package com.faall1n.survival;
 
 import com.faall1n.survival.chat.Global;
 import com.faall1n.survival.chat.Local;
+import com.faall1n.survival.commands.Aviso;
 import com.faall1n.survival.commands.Fly;
 import com.faall1n.survival.commands.Kit;
 import com.faall1n.survival.kits.InventoryKits;
@@ -77,6 +78,9 @@ public class Main extends JavaPlugin {
 
         new Global("g", "/g", "Chat Global");
 
+        new Aviso("aviso", "/aviso", "Aviso");
+        new Aviso("avisar", "/avisar", "Aviso");
+        new Aviso("say", "/say", "Say");
         new Fly("fly", "/fly", "Fly");
         new Kit("kit", "/kit", "Kits");
         new Kit("kits", "/kits", "Kits");
