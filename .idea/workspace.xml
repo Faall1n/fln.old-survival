@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="97418a75-c4db-4f4d-a9c8-f68004d5c484" name="Default Changelist" comment="Survival">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/faall1n/survival/commands/Aviso.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/faall1n/survival/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/faall1n/survival/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/faall1n/survival/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/faall1n/survival/chat/Global.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/faall1n/survival/listeners/tags/NameTags.class" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/faall1n/survival/commands/EnderChest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/faall1n/survival/commands/Aviso.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/faall1n/survival/commands/Aviso.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -41,8 +37,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/faall1n/survival/commands/Aviso.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="291">
-              <caret line="41" column="52" selection-start-line="41" selection-start-column="52" selection-end-line="41" selection-end-column="52" />
+            <state relative-caret-position="495">
+              <caret line="32" column="50" selection-start-line="32" selection-start-column="50" selection-end-line="32" selection-end-column="50" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -51,6 +47,18 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/faall1n/survival/commands/EnderChest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="291">
+              <caret line="32" column="59" selection-start-line="32" selection-start-column="59" selection-end-line="32" selection-end-column="59" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/faall1n/survival/Main.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="240">
@@ -106,8 +114,9 @@
         <option value="$PROJECT_DIR$/src/main/java/com/faall1n/survival/kits/menus/preview/PreviewSemanal.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/faall1n/survival/commands/Kit.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/faall1n/survival/kits/menus/BasicInventory.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/faall1n/survival/commands/Aviso.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/faall1n/survival/Main.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/faall1n/survival/commands/Aviso.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/faall1n/survival/commands/EnderChest.java" />
       </list>
     </option>
   </component>
@@ -376,8 +385,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49756098" visible="true" weight="0.28441754" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49756098" visible="true" weight="0.28441754" />
       <window_info id="Structure" order="1" sideWeight="0.502439" side_tool="true" weight="0.24962178" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -386,7 +396,7 @@
       <window_info id="Favorites" order="6" sideWeight="0.502439" side_tool="true" weight="0.24962178" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32405892" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32405892" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -399,7 +409,7 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.24962178" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="right" id="Maven" order="4" visible="true" weight="0.32980332" />
+      <window_info anchor="right" id="Maven" order="4" weight="0.32980332" />
       <window_info anchor="right" id="Theme Preview" order="5" />
       <window_info anchor="right" id="Capture Analysis" order="6" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
@@ -736,20 +746,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/faall1n/survival/commands/Aviso.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/faall1n/survival/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="291">
-          <caret line="41" column="52" selection-start-line="41" selection-start-column="52" selection-end-line="41" selection-end-column="52" />
+        <state relative-caret-position="240">
+          <caret line="80" column="46" selection-start-line="80" selection-start-column="46" selection-end-line="80" selection-end-column="46" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/faall1n/survival/Main.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/faall1n/survival/commands/Aviso.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="80" column="46" selection-start-line="80" selection-start-column="46" selection-end-line="80" selection-end-column="46" />
+        <state relative-caret-position="495">
+          <caret line="32" column="50" selection-start-line="32" selection-start-column="50" selection-end-line="32" selection-end-column="50" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/faall1n/survival/commands/EnderChest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="291">
+          <caret line="32" column="59" selection-start-line="32" selection-start-column="59" selection-end-line="32" selection-end-column="59" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

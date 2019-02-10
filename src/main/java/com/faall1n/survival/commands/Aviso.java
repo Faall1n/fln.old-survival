@@ -30,7 +30,7 @@ public class Aviso extends AbstractCommand {
 
         Player p = (Player) sender;
 
-        if (!p.hasPermission("survival.cmd.aviso")) {
+        if (!p.hasPermission("survival.staff.aviso")) {
             p.sendMessage("§cDesculpe, você não possui permissão para executar este comando.");
             return true;
         }
