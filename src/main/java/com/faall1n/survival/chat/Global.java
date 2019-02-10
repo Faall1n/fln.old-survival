@@ -21,7 +21,7 @@ public class Global extends AbstractCommand {
             Player p = (Player) sender;
 
             if (args.length == 0) {
-                p.sendMessage("§cUtiliez: '/g <mensagem>'.");
+                p.sendMessage("§cUse: '/g <mensagem>'.");
                 return false;
             }
 

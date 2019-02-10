@@ -2,6 +2,14 @@ package com.faall1n.survival;
 
 import com.faall1n.survival.chat.Global;
 import com.faall1n.survival.chat.Local;
+import com.faall1n.survival.commands.Fly;
+import com.faall1n.survival.commands.Kit;
+import com.faall1n.survival.kits.InventoryKits;
+import com.faall1n.survival.kits.menus.BasicInventory;
+import com.faall1n.survival.kits.menus.preview.PreviewBasico;
+import com.faall1n.survival.kits.menus.preview.PreviewDiario;
+import com.faall1n.survival.kits.menus.preview.PreviewMensal;
+import com.faall1n.survival.kits.menus.preview.PreviewSemanal;
 import com.faall1n.survival.listeners.PlayerListener;
 import com.faall1n.survival.listeners.ServerListener;
 import com.faall1n.survival.listeners.scoreboard.Score;
@@ -69,6 +77,10 @@ public class Main extends JavaPlugin {
 
         new Global("g", "/g", "Chat Global");
 
+        new Fly("fly", "/fly", "Fly");
+        new Kit("kit", "/kit", "Kits");
+        new Kit("kits", "/kits", "Kits");
+
     }
 
     public void carregarEventos() {
@@ -79,6 +91,13 @@ public class Main extends JavaPlugin {
         PM.registerEvents(new PlayerListener(), this);
         PM.registerEvents(new ServerListener(), this);
         PM.registerEvents(new Score(), this);
+
+        PM.registerEvents(new InventoryKits(), this);
+        PM.registerEvents(new BasicInventory(), this);
+        PM.registerEvents(new PreviewBasico(), this);
+        PM.registerEvents(new PreviewDiario(), this);
+        PM.registerEvents(new PreviewSemanal(), this);
+        PM.registerEvents(new PreviewMensal(), this);
 
     }
 
