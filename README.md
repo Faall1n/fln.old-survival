@@ -1,1 +1,1 @@
-Old abandoned project of a survival server.
+Old abandoned project of a survival Minecraft server.
